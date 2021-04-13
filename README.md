@@ -20,7 +20,7 @@ resource "hsdp_function" "cuda_test" {
   command      = ["/app/cudatest"]
 
   schedule {
-    run_every = "*/5 * * * *"
+    cron = "*/5 * * * *"
   }
 
   backend {
