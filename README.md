@@ -1,6 +1,6 @@
 # hsdp-task-cuda-test
 
-A Docker image that serves as a skeleton for creating [hsdp_function](https://registry.terraform.io/providers/philips-software/hsdp/latest/docs/resources/function) tasks.
+A Docker image that serves as a skeleton for creating [hsdp_function](https://registry.terraform.io/providers/philips-software/hsdp/latest/docs/resources/function) tasks which can take advantage of HSDP Iron GPU workers.
 
 # Usage
 
