@@ -1,4 +1,4 @@
-FROM philipslabs/siderite:latest-debian as builder
+FROM philipslabs/siderite:latest-debian as siderite
 
 FROM nvidia/cuda:10.0-devel-ubuntu18.04 as cu
 RUN apt-get update && apt-get install -y \
@@ -24,6 +24,6 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY --from=builder /app/siderite /app
+COPY --from=siderite /app/siderite /app
 COPY --from=cu      /root/go/bin/cudatest /app
 ENTRYPOINT ["/app/siderite","task"]
