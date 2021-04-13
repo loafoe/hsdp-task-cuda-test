@@ -1,6 +1,6 @@
 FROM philipslabs/siderite:latest-debian as builder
 
-FROM nvidia/cuda:10.0-devel-ubuntu18.04 as cu
+FROM nvidia/cuda:11.2.2-devel-ubuntu18.04 as cu
 RUN apt-get update && apt-get install -y \
   wget \
   build-essential \
@@ -17,7 +17,7 @@ RUN go install -v gorgonia.org/cu/cmd/cudatest@latest
 RUN echo $HOME
 
 
-FROM nvidia/cuda:10.0-base-ubuntu18.04
+FROM nvidia/cuda:11.2.2-devel-ubuntu18.04
 RUN apt-get update && apt-get install -y \
   pciutils \
   nvidia-utils-435 \
