@@ -1,4 +1,4 @@
-FROM philipslabs/siderite:debian-v0.7.2 as siderite
+FROM philipslabs/siderite:debian-v0.9.0 as siderite
 
 FROM nvidia/cuda:11.2.0-devel-ubuntu20.04 as cu
 RUN apt-get update && apt-get install -y \
