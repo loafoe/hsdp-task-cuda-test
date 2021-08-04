@@ -19,12 +19,9 @@ resource "hsdp_function" "cuda_test" {
   docker_image = "philipslabs/hsdp-task-cuda-test:latest"
   command      = ["/app/cudatest"]
 
-  schedule {
-    cron = "*/5 * * * *"
-  }
+  schedule = "*/5 * * * *"
 
   backend {
-    type        = "siderite"
     credentials = module.siderite_backend.credentials
   }
 }
