@@ -1,6 +1,6 @@
 FROM philipslabs/siderite:debian-v0.12.2 as siderite
 
-FROM nvidia/cuda:11.6.0-devel-ubuntu20.04 as cu
+FROM nvidia/cuda:11.7.1-devel-ubuntu20.04 as cu
 RUN apt-get update && apt-get install -y \
   wget \
   build-essential \
@@ -17,7 +17,7 @@ RUN go install -v gorgonia.org/cu/cmd/cudatest@latest
 RUN echo $HOME
 
 
-FROM nvidia/cuda:11.6.0-devel-ubuntu20.04
+FROM nvidia/cuda:11.7.1-devel-ubuntu20.04
 RUN apt-get update && apt-get install -y \
   pciutils \
   nvidia-utils-460 \
